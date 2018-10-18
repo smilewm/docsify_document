@@ -1,5 +1,9 @@
 # ionic3
 
+## 官网
+
+### https://ionicframework.com/docs/
+
 ## 命令
 
 ```bash
@@ -20,7 +24,7 @@ ionic cordova resources ios    生成图标和启动图   图标大小1024x1024 
 ionic generate page xxx 生成时自动module.ts文件
 ```
 
-## 生命周期
+## ionic 生命周期
 
 - ### ionViewDidLoad
 
@@ -92,7 +96,9 @@ page-login {
 }
 ```
 
-**`login.ts`**
+**`login.ts 方式一`**
+
+该种方式使用 ionic 生命周期来监听各个周期事件，如 ionViewDidEnter
 
 ```js
 import { Component } from '@angular/core';
@@ -103,9 +109,95 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-login',
   templateUrl: 'login.html'
 })
+
+
 export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  ionViewDidEnter() {}
 }
 ```
 
-## 组件开发
+**`login.ts 方式二`**
+
+该种方式使用 Angular 生命周期来监听各个周期事件，如 ngOnInit
+
+```js
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'page-login',
+  templateUrl: 'login.html'
+})
+export class LoginPage implements OnInit {
+  constructor() {}
+  ngOnInit() {}
+}
+```
+
+## 常用语
+
+- `@Input`
+
+@Input 是用来定义输入的，是接收其他组件传过来的数据的，即将父作用域的值“输入”到子作用域，然后在子作用域中进行相关处理
+
+```html
+父组件
+<z-chart [title]="title"></z-chart>
+<!--or直接复制-->
+<z-chart title="标题"></z-chart>
+```
+
+```js
+//子组件
+export class ZMarkerComponent implements OnInit {
+  @Input()
+  title: string;
+  //或者定义初始值
+  @Input()
+  title: string = '初始标题';
+}
+```
+
+- `@Output`
+
+@Output 相当于指令的方法绑定，子作用域触发事件执行响应函数，而响应函数方法体则位于父作用域中，相当于将事件“输出到”父作用域中，在父作用域中处理  
+父组件部分
+
+```html
+<z-chart (markerClick)="doClick"></z-chart>
+```
+
+```js
+```
+
+子组件部分
+
+```js
+export class ZMarkerComponent implements OnInit {
+  @Output() markerClick: EventEmitter<ZMarkerComponent> = new EventEmitter<ZMarkerComponent>();
+}
+
+//触发
+this.markerClick.emit();
+```
+
+- `@ViewChild`
+
+@ViewChild 装饰器用于获取模板视图中的元素或直接调用其组件中的方法
+
+```html
+  <div #ZEchart class="z-chart"></div>
+```
+
+```js
+export class ZChartComponent implements OnInit {
+  @ViewChild('ZEchart')
+  containerBar: ElementRef;
+}
+
+this.containerBar.nativeElement; //获取该元素
+```
+
+- `@ViewChildren`
+
+@ViewChildren 装饰器是用来从模板视图中获取匹配的多个元素，返回的结果是一个 QueryList 集合。
