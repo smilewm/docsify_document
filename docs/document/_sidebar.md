@@ -1,3 +1,8 @@
 - 证书
   - [sslfree 证书](document/sslfree.md)
   - [宝塔 windows 面板](document/bt.md)
+- vue 相关
+  - [vue](vue/vue.md)
+  - [vue router](https://router.vuejs.org/zh/)
+  - [vue 开源项目库](https://segmentfault.com/p/1210000008583242/read?from=timeline)
+  - [v-charts 图表](https://v-charts.js.org/#/)
