@@ -75,3 +75,48 @@ repeat()方法返回一个新字符串，表示将原字符串重复 n 次.
 'hello'.repeat(2); // "hellohello"
 'x'.repeat(0); // ""
 ```
+
+> - 参数如果是小数，会被取整
+> - 参数小于等于-1 或者 Infinity，会报错
+> - 参数 NaN 等同于 0
+
+# 补全
+
+    如果某个字符串不够指定长度，会在头部或尾部补全。
+
+## padStart
+
+    用于头部补全
+
+```js
+'x'.padStart(5, 'ab'); // 'ababx'
+'x'.padStart(4, 'ab'); // 'abax'
+'xyzkey'.padStart(4, 'ab'); // 'xyzkey'
+```
+
+## padEnd
+
+    用于尾部补全
+
+```js
+'x'.padEnd(5, 'ab'); // 'xabab'
+'x'.padEnd(4, 'ab'); // 'xaba'
+```
+
+# 模板字符串
+
+用反引号` `` `标识
+
+```js
+`<ul>
+<li>${param}</li>
+</ul>`;
+```
+
+> 可嵌入变量，变量写在`${ }`中
+
+如果大括号内部是一个字符串，将会原样输出。
+
+```js
+`Hello ${'World'}`; // "Hello World"
+```
