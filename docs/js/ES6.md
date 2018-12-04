@@ -440,3 +440,225 @@ arr;
 [2, 3, 4].flatMap(x => [x, x * 2]); // [2, 4, 3, 6, 4, 8]
 // 相当于 [[2, 4], [3, 6], [4, 8]].flat()
 ```
+
+# Set
+
+类似于数组，但是成员的值都是唯一的，没有重复的值。
+
+```js
+const set = new Set([1, 2, 3, 4, 4]);
+[...set]; // [1, 2, 3, 4]
+set.size; // 4
+```
+
+> 用于数组去重 [...new Set(array)]
+
+## 属性和方法
+
+### 属性
+
+- `Set.prototype.constructor`：构造函数，弄人就是 Set 函数
+- `Set.prototype.size`：返回 Set 实例的成员总数
+
+### 方法
+
+- `add(value)`：添加某个值，返回 Set 结构本身
+- `delete(value)`：删除某个值，返回布尔值表示是否删除成功
+- `has(value)`：返回布尔值，表示该值是否为 Set 的成员
+- `clear()`：清除所有成员
+
+# Map
+
+类似于对象，但是键的范围不限于字符串，各种类型的值（包括对象）都可以当作键。
+
+size、set、get、has、delete、clear
+
+## 互相转换
+
+- Map 转数组
+
+  ```js
+  const myMap = new Map().set(true, 7).set({ foo: 3 }, ['abc']);
+  [...myMap];
+  // [ [ true, 7 ], [ { foo: 3 }, [ 'abc' ] ] ]
+  ```
+
+- 数组转 Map
+
+```js
+new Map([[true, 7], [{ foo: 3 }, ['abc']]]);
+// Map {
+//   true => 7,
+//   Object {foo: 3} => ['abc']
+// }
+```
+
+- Map 转对象
+
+```js
+function strMapToObj(strMap) {
+  let obj = Object.create(null);
+  for (let [k, v] of strMap) {
+    obj[k] = v;
+  }
+  return obj;
+}
+
+const myMap = new Map().set('yes', true).set('no', false);
+strMapToObj(myMap);
+// { yes: true, no: false }
+```
+
+- 对象转 Map
+
+```js
+function objToStrMap(obj) {
+  let strMap = new Map();
+  for (let k of Object.keys(obj)) {
+    strMap.set(k, obj[k]);
+  }
+  return strMap;
+}
+
+objToStrMap({ yes: true, no: false });
+// Map {"yes" => true, "no" => false}
+```
+
+- Map 转 JSON
+
+`一：Map的键名都是字符串，可以选择转为对象JSON`
+
+```js
+function strMapToJson(strMap) {
+  return JSON.stringify(strMapToObj(strMap));
+}
+
+let myMap = new Map().set('yes', true).set('no', false);
+strMapToJson(myMap);
+// '{"yes":true,"no":false}'
+```
+
+`二：键名有非字符串，可以选择转为数组JSON`
+
+```js
+function mapToArrayJson(map) {
+  return JSON.stringify([...map]);
+}
+
+let myMap = new Map().set(true, 7).set({ foo: 3 }, ['abc']);
+mapToArrayJson(myMap);
+// '[[true,7],[{"foo":3},["abc"]]]'
+```
+
+- JSON 转为 Map
+
+`一：所有键名都是字符串`
+
+```js
+function jsonToStrMap(jsonStr) {
+  return objToStrMap(JSON.parse(jsonStr));
+}
+
+jsonToStrMap('{"yes": true, "no": false}');
+// Map {'yes' => true, 'no' => false}
+```
+
+`二：整个 JSON 就是一个数组，且每个数组成员本身，又是一个有两个成员的数组。这时，它可以一一对应地转为 Map`
+
+```js
+function jsonToMap(jsonStr) {
+  return new Map(JSON.parse(jsonStr));
+}
+
+jsonToMap('[[true,7],[{"foo":3},["abc"]]]');
+// Map {true => 7, Object {foo: 3} => ['abc']}
+```
+
+# Promise 对象
+
+异步编程的一种解决方案。
+
+## 特点
+
+- 对象的状态不受外界影响  
+  三种状态：`pending`(进行中)、`fulfilled`(已完成)、`rejected`(已失败)  
+  只有异步操作的结果，可以决定当前是哪一种状态，其他操作无法改变这个状态
+
+```js
+  const promise = new Promise((resolve, reject) => {
+    .........
+    if(...){
+      // 成功
+      resolve();
+    }else{
+      // 失败
+      reject();
+    }
+  })
+
+  promise.then(() => {
+    console.log(123);
+  })
+```
+
+## then
+
+`then` 方法包含两个参数，第一个为 `resolved`状态的回调函数，第二个参数(可选)为 `rejected` 状态的回调函数
+
+```js
+promise.then(
+  () => {
+    // 成功
+  },
+  () => {
+    // 失败
+  }
+);
+```
+
+- `then` 方法返回的是一个新的`Promise`实例(注意:不是原来那个`Promise`实例)。因此可以采用链式写法，即`then`方法后面再调用另一个`then`方法
+
+```js
+promise
+  .then(() => {
+    setTimeout(console.log(123), 2000);
+  })
+  .then(() => {
+    console.log(3333333333);
+  });
+
+// 123
+// 33333333333
+```
+
+## catch
+
+`catch`指定发生错误时的回调函数
+
+```js
+promise
+  .then(() => {})
+  .catch(error => {
+    console.log('发生错误!', error);
+  });
+```
+
+## finally
+
+`finally`用于指定不管 Promise 对象最后状态如何，都会执行的操作。
+
+```js
+promise.then(result=>{...})
+.catch(error=>{...})
+.finally(()=>{---})
+```
+
+## all
+
+`Promise.all`方法用于将多个 Promise 实例，包装成一个新的 Promise 实例。
+
+```js
+const p = Promise.all([p1, p2, p3]);
+```
+
+!> p1,p2,p3 都为 Promise 实例，
