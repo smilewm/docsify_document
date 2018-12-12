@@ -27,7 +27,7 @@
 
 - [fullPage](https://github.com/alvarotrigo/fullPage.js)  全屏滚动插件  
 
-- [swiper](https://www.swiper.com.cn/) 轮播图
+- [swiper](https://www.swiper.com.cn/)  轮播图
 
 ## css相关  
 - [animate.css](https://daneden.github.io/animate.css/)
