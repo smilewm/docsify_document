@@ -6,6 +6,9 @@
   - [vue router](https://router.vuejs.org/zh/)
   - [vue 开源项目库](https://segmentfault.com/p/1210000008583242/read?from=timeline)
   - [v-charts 图表](https://v-charts.js.org/#/)
+  - [插件使用合集](document/collection.md)
+  - [知识点](document/vue.md)
+  - [svg](vue/svg.md)
 - 常用 js
   - [深/浅度拷贝](js/copy.md)
   - [forEach/map 区别](js/each_map.md)
