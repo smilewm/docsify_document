@@ -1,14 +1,14 @@
 - 证书
-  - [sslfree 证书](document/sslfree.md)
-  - [宝塔 windows 面板](document/bt.md)
+  - [sslfree 证书](document/content/sslfree.md)
+  - [宝塔 windows 面板](document/content/bt.md)
 - vue 相关
   - [vue](vue/vue.md)
+  - [vuex](document/content/vuex.md)
   - [vue router](https://router.vuejs.org/zh/)
   - [vue 开源项目库](https://segmentfault.com/p/1210000008583242/read?from=timeline)
   - [v-charts 图表](https://v-charts.js.org/#/)
-  - [插件使用合集](document/collection.md)
-  - [知识点](document/vue.md)
-  - [svg](vue/svg.md)
+  - [插件使用合集](document/content/collection.md)
+  - [知识点](document/content/vue.md)
 - 常用 js
   - [深/浅度拷贝](js/copy.md)
   - [forEach/map 区别](js/each_map.md)

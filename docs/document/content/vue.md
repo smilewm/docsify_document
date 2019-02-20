@@ -22,7 +22,7 @@
 !> `因此，初始化部分写在created中，需要进行dom操作的，写在mounted中，`  
 `比如：echarts初始化 echart = echarts.init(document.getElementById('id'))`
 
-![](../_images/vue/vue_live.png)  
+![](../../_images/vue/vue_live.png)  
 
 ## npm install -save 和 -save-dev 区别
 `npm install moduleName 命令`
