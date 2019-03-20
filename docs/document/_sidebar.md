@@ -1,16 +1,24 @@
-- 证书
-  - [sslfree 证书](document/content/sslfree.md)
-  - [宝塔 windows 面板](document/content/bt.md)
-- vue 相关
-  - [vue](vue/vue.md)
-  - [vuex](document/content/vuex.md)
-  - [vue router](https://router.vuejs.org/zh/)
-  - [vue 开源项目库](https://segmentfault.com/p/1210000008583242/read?from=timeline)
-  - [v-charts 图表](https://v-charts.js.org/#/)
-  - [插件使用合集](document/content/collection.md)
-  - [知识点](document/content/vue.md)
-- 常用 js
-  - [深/浅度拷贝](js/copy.md)
-  - [forEach/map 区别](js/each_map.md)
-  - [ES6](js/ES6.md)
-  - [iframe相关](js/iframe.md)
+- **证书**
+  - [sslfree 证书](document/ssl/sslfree.md)
+  - [宝塔 windows 面板](document/ssl/bt.md)
+- **vue 相关**
+  - 知识点
+    - [vue安装](document/vue/install.md)
+    - [node-sass](document/vue/node-sass.md)
+    - [自定义组件](document/vue/custom-component.md)
+    - [生命周期](document/vue/life-cicle.md)
+    - [--save与--save-dev](document/vue/save与save-dev.md)
+    - [vue-router传参](document/vue/router-params.md)
+    - [mixins混入](document/vue/mixins.md)
+  - 组件
+    - [svg](document/component/svg.md)
+  - 插件
+    - [vuex](document/plugin/vuex.md)
+    - [vue router](https://router.vuejs.org/zh/)
+    - [vue 开源项目库](https://segmentfault.com/p/1210000008583242/read?from=timeline)
+    - [v-charts 图表](https://v-charts.js.org/#/)
+- **常用 js**
+  - [深/浅度拷贝](document/js/copy.md)
+  - [forEach/map 区别](document/js/each_map.md)
+  - [ES6](document/js/ES6.md)
+  - [iframe相关](document/js/iframe.md)
