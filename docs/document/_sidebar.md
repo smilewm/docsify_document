@@ -21,6 +21,8 @@
   - [深/浅度拷贝](document/js/copy.md)
   - [数组相关](document/js/array.md)
   - [forEach/map 区别](document/js/each_map.md)
+  - [reduce()](document/js/reduce.md)
+  - [Promise和Async await](document/js/promise.md)
   - [ES6](document/js/ES6.md)
   - [iframe相关](document/js/iframe.md)
   - [常用](document/js/common.md)
