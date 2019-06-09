@@ -3,13 +3,14 @@
   - [宝塔 windows 面板](document/ssl/bt.md)
 - **vue 相关**
   - 知识点
-    - [vue安装](document/vue/install.md)
+    - [vue 安装](document/vue/install.md)
     - [node-sass](document/vue/node-sass.md)
     - [自定义组件](document/vue/custom-component.md)
     - [生命周期](document/vue/life-cicle.md)
-    - [--save与--save-dev](document/vue/save与save-dev.md)
-    - [vue-router传参](document/vue/router-params.md)
-    - [mixins混入](document/vue/mixins.md)
+    - [--save 与--save-dev](document/vue/save与save-dev.md)
+    - [vue-router 传参](document/vue/router-params.md)
+    - [mixins 混入](document/vue/mixins.md)
+    - [scoped](document/vue/scoped.md)
   - 组件
     - [svg](document/component/svg.md)
   - 插件
@@ -22,7 +23,7 @@
   - [数组相关](document/js/array.md)
   - [forEach/map 区别](document/js/each_map.md)
   - [reduce()](document/js/reduce.md)
-  - [Promise和Async await](document/js/promise.md)
+  - [Promise 和 Async await](document/js/promise.md)
   - [ES6](document/js/ES6.md)
-  - [iframe相关](document/js/iframe.md)
+  - [iframe 相关](document/js/iframe.md)
   - [常用](document/js/common.md)
