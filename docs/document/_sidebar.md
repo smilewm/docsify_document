@@ -24,6 +24,7 @@
   - [forEach/map 区别](document/js/each_map.md)
   - [reduce()](document/js/reduce.md)
   - [Promise 和 Async await](document/js/promise.md)
+  - [inheritAttrs、attrs和listeners](document/js/attrs.md)
   - [ES6](document/js/ES6.md)
   - [iframe 相关](document/js/iframe.md)
   - [常用](document/js/common.md)
