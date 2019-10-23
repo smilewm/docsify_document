@@ -11,6 +11,7 @@
     - [vue-router 传参](document/vue/router-params.md)
     - [mixins 混入](document/vue/mixins.md)
     - [scoped](document/vue/scoped.md)
+    - [sass全局变量](document/vue/sass.md)
   - 组件
     - [svg](document/component/svg.md)
   - 插件
