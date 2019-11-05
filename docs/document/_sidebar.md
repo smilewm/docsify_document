@@ -12,6 +12,7 @@
     - [mixins 混入](document/vue/mixins.md)
     - [scoped](document/vue/scoped.md)
     - [sass全局变量](document/vue/sass.md)
+    - [常用](document/vue/common.md)
   - vue-cli3
     - [搭建](document/vue/cli3/create.md)
     - [静态资源](document/vue/cli3/static.md)
