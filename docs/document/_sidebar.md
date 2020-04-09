@@ -16,6 +16,7 @@
   - vue-cli3
     - [搭建](document/vue/cli3/create.md)
     - [静态资源](document/vue/cli3/static.md)
+    - [全局引入scss](document/vue/cli3/gobal.md)
   - 组件
     - [svg](document/component/svg.md)
   - 插件
