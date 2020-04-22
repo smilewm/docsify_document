@@ -7,8 +7,8 @@
     ``` js
     npm i svg-sprite-loader -S
     ```
-2. 更改build/webpack.base.conf.js配置文件
-
+2. 更改配置文件  
+  `vue-cli2.0` build/webpack.base.conf.js
    ```js
     {
       test: /\.svg$/,
@@ -31,6 +31,27 @@
         }
       }
    ```
+
+   `vue-cli3.0以上` vue.config.js  
+     
+    ```js
+      chainWebpack: (config) => {
+        config.resolve.alias
+        .set('@', resolve('src'))
+        config.module.rules.delete("svg");  //删除默认配置svg
+        config.module
+        .rule('svg-smart')
+        .test(/\.svg$/)
+        .include
+        .add(resolve('src/icons/svg')) // svg图路径
+        .end()
+        .use('svg-sprite-loader')
+        .loader('svg-sprite-loader')
+        .options({
+          symbolId: 'icon-[name]'
+        })
+      }
+    ```
 
   3. 下载svg文件并放入/icons/svg/目录下  
      
