@@ -19,3 +19,10 @@ console.log(cc);//["a", "b", "c", "d", "d", "e", "f"]
 ## 数组去重  
 
 const newArr = Array.from(new Set(arr));
+
+## 数组最大值、最小值
+
+const max = eval(`Math.max(${arr.toString()})`);  
+const min = eval(`Math.min(${arr.toString()})`);  
+
+!> 注意，不能将 `` 符号去除，去除会导致报错.
